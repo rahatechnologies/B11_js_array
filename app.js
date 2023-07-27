@@ -87,3 +87,100 @@ console.dir(listItems);
 
 const arrayListItems = Array.from(listItems);
 console.log(arrayListItems);
+
+//******************************** */
+// What we can store inside an array
+//******************************** */
+
+// Array can store heterogeneous data
+
+// Example: array of string
+const hobbies = ['gardening', 'sports', 'cooking'];
+
+// Example: Mix of data structure (integer, string, Object)
+const personalData = [30, 'Koushik', { moreDetail: [] }];
+
+// nested 2-dimensional Array
+const analyticsData = [
+  [1, 1.6],
+  [-5.4, 2.1],
+  [8.9, 3.5],
+  [5],
+  [],
+  'hi',
+  ['Hello', 'welcome'],
+];
+
+for (const data of analyticsData) {
+  for (dataPoints of data) {
+    console.log(dataPoints);
+  }
+}
+
+console.log(personalData[1]);
+
+const newHobbies = ['gardening', 'sports', 'cooking'];
+
+//  push method for creating new index element in array as last element
+newHobbies.push('Reading');
+console.log(newHobbies);
+
+// Direct assignment for creating new index element in array as last element
+newHobbies[4] = 'writing';
+console.log(newHobbies);
+
+// removing last array element and return it
+const poppedValue = newHobbies.pop();
+console.log(`poppedValue: ${poppedValue}`);
+console.log(newHobbies);
+
+//Drawbacks:  performance is bad
+// adding new element inside array as a first element
+newHobbies.unshift('coding');
+console.log(`After unshift() operation: ${newHobbies}`);
+
+//Drawbacks:  performance is bad
+newHobbies.shift();
+console.log(`After shift() operation: ${newHobbies}`);
+
+// Rarely used : creation of Empty cell Array
+// newHobbies[10] = 'playing Cricket';
+// console.log(`After newHobbies[10] assignment operation: ${newHobbies}`);
+// console.log(newHobbies);
+// console.log(newHobbies[8]);
+
+//******************************** */
+// Use of Array.splice
+//******************************** */
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+
+months.splice(4, 1, 'May');
+// Replaces 1 element at index 4
+console.log(months);
+
+// // splice(start)
+// const spliced_Months_Array = months.splice(2);
+
+// console.log(spliced_Months_Array);
+// console.log(months);
+
+// splice(start, deleteCount)
+const spliced_Months_Array2 = months.splice(2, 1);
+
+console.log(spliced_Months_Array2);
+console.log(months);
+
+// splice(start, deleteCount, item0, item1)
+const spliced_Months_Array3 = months.splice(2, 1, 'july', 'august');
+
+console.log(spliced_Months_Array3);
+console.log(months);
+
+// splice(start, deleteCount, item0, item1, ...., itemN)
+const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+
+console.log(testResults.slice());
